@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Obi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+        }
+        .botao {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .botao:hover {
+            background-color: #45a049;
+        }
+        .instrucao {
+            text-align: left;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            margin: 10px 0;
+            background: #e8f5e9;
+        }
+        .imagem {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px 0;
+        }
+        .escondido {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jogo de Obi - Passo a Passo</h1>
+
+        <button class="botao" onclick="mostrarEtapa(1)">1️⃣ Abertura e Limpeza do Obi</button>
+        <div id="etapa1" class="instrucao escondido">
+            <p><strong>Abertura do Obi:</strong></p>
+            <p>- Recite: <br>
+              "Obi lo ni bi ikú" <br>
+              "Obi lo ni bi arun" <br>
+              "Obi lo ni bi ejó" <br>
+              "Obi lo ni bi pòfo" <br>
+              "Obi lo ni bi oṣí"</p>
+            <p>- Separe os gomos do Obi e retire as afuas.</p>
+        </div>
+
+        <button class="botao" onclick="mostrarEtapa(2)">2️⃣ Rodando as Afuas e Invocações</button>
+        <div id="etapa2" class="instrucao escondido">
+            <p><strong>Rodando as Afuas:</strong></p>
+            <p>- Gire as afuas sobre o Obi e sobre sua cabeça, enquanto diz:</p>
+            <p>
+                "Ki Esu gbá" (3 vezes) <br>
+                "Koran gbá" <br>
+                "Kofo gbá" <br>
+                "Kejo gbá" <br>
+                "Kiku kuro lori rẹ́ (mi)" <br>
+                "Kiarun kuro lori rẹ́ (mi)"
+            </p>
+            <p>- Após rodar as afuas, jogue na rua ou num copo de água.</p>
+        </div>
+
+        <button class="botao" onclick="mostrarEtapa(3)">3️⃣ Apresentando o Obi ao Orisa</button>
+        <div id="etapa3" class="instrucao escondido">
+            <p><strong>Apresentação ao Orisa:</strong></p>
+            <p>- Junte os gomos na mão e diga: "Oriṣa _____ mo pe o" (três vezes).</p>
+            <p>- Outras frases importantes:</p>
+            <p>
+                "Obi koṣi ku" <br>
+                "Obi komarun" <br>
+                "Obi koṣi ejo" <br>
+                "Obi koṣi pofo" <br>
+                "Obi koṣi oṣi"
+            </p>
+        </div>
+
+        <button class="botao" onclick="mostrarEtapa(4)">4️⃣ Jogando o Obi</button>
+        <div id="etapa4" class="instrucao escondido">
+            <p><strong>Clique no botão abaixo para jogar o Obi.</strong></p>
+            <button class="botao" onclick="jogarObi()">🎲 Jogar Obi</button>
+            <img id="resultadoImagem" class="imagem" src="" alt="">
+            <p id="resultadoTexto"></p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarEtapa(numero) {
+            let elementos = document.querySelectorAll(".instrucao");
+            elementos.forEach(el => el.classList.add("escondido"));
+            document.getElementById("etapa" + numero).classList.remove("escondido");
+        }
+
+        const quedas = [
+            { nome: "Okanran", texto: "Contrariando o que muitos dizem, não trata de caída negativa ou relacionada à morte. Aconselha a pessoa a rever atitudes e evitar desentendimentos. Pode ser necessário rituais para Sango, Yami e Egungun.", imagem: "imagens/okanran.png" },
+            { nome: "Ejifé", texto: "A mais perfeita das combinações. Dispensa novos lançamentos do Obi. Representa aceitação imediata e equilíbrio. Pode indicar harmonia ou necessidade de esforço extra.", imagem: "imagens/ejife.png" },
+            { nome: "Etawa", texto: "Requer nova jogada para confirmação. Se repetir na terceira jogada, significa que está tudo bem. Caso contrário, investigue mais profundamente.", imagem: "imagens/etawa.png" },
+            { nome: "Aláfia", texto: "Harmonia geral e aceitação plena. Pode-se jogar novamente para confirmação. Se repetir ou vier Ejifé, tudo bem. Caso contrário, verifique se há problemas ocultos.", imagem: "imagens/alafia.png" },
+            { nome: "Oyekú", texto: "Representa escuridão ou necessidade de mudança. Antes de jogar novamente, pergunte 'Oyeku fó ire?'. Se vier Alafia, Ejifé ou Etawa duas vezes seguidas, indica boa sorte. Caso contrário, pode sugerir dificuldades ou necessidade de rituais.", imagem: "imagens/oyeku.png" }
+        ];
+
+        function jogarObi() {
+            let sorteio = Math.floor(Math.random() * quedas.length);
+            let resultado = quedas[sorteio];
+
+            document.getElementById("resultadoImagem").src = resultado.imagem;
+            document.getElementById("resultadoTexto").innerText = resultado.nome + ": " + resultado.texto;
+        }
+    </script>
+
+</body>
+</html>
