@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de Obi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,6 +50,15 @@
         }
         .escondido {
             display: none;
+        }
+        .assinatura {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 24px;
+            color: #4B0082; /* Roxo escuro místico */
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -107,6 +117,10 @@
         </div>
     </div>
 
+    <div class="assinatura">
+        Ogun Koyà ✨🔮
+    </div>
+
     <script>
         function mostrarEtapa(numero) {
             let elementos = document.querySelectorAll(".instrucao");
@@ -115,19 +129,25 @@
         }
 
         const quedas = [
-            { nome: "Okanran", texto: "Contrariando o que muitos dizem, não trata de caída negativa ou relacionada à morte. Aconselha a pessoa a rever atitudes e evitar desentendimentos. Pode ser necessário rituais para Sango, Yami e Egungun.", imagem: "imagens/okanran.png" },
-            { nome: "Ejifé", texto: "A mais perfeita das combinações. Dispensa novos lançamentos do Obi. Representa aceitação imediata e equilíbrio. Pode indicar harmonia ou necessidade de esforço extra.", imagem: "imagens/ejife.png" },
-            { nome: "Etawa", texto: "Requer nova jogada para confirmação. Se repetir na terceira jogada, significa que está tudo bem. Caso contrário, investigue mais profundamente.", imagem: "imagens/etawa.png" },
-            { nome: "Aláfia", texto: "Harmonia geral e aceitação plena. Pode-se jogar novamente para confirmação. Se repetir ou vier Ejifé, tudo bem. Caso contrário, verifique se há problemas ocultos.", imagem: "imagens/alafia.png" },
-            { nome: "Oyekú", texto: "Representa escuridão ou necessidade de mudança. Antes de jogar novamente, pergunte 'Oyeku fó ire?'. Se vier Alafia, Ejifé ou Etawa duas vezes seguidas, indica boa sorte. Caso contrário, pode sugerir dificuldades ou necessidade de rituais.", imagem: "imagens/oyeku.png" }
+            { nome: "Okanran", texto: "Aconselha rever atitudes e evitar desentendimentos. Pode ser necessário rituais para Sango, Yami e Egungun.", imagem: "imagens/okanran.png" },
+            { nome: "Ejifé", texto: "Aceitação imediata, equilíbrio perfeito. Pode indicar harmonia ou esforço necessário.", imagem: "imagens/ejife.png" },
+            { nome: "Etawa", texto: "Requer nova jogada para confirmação. Se repetir, indica estabilidade.", imagem: "imagens/etawa.png" },
+            { nome: "Aláfia", texto: "Harmonia geral e aceitação plena. Se repetir ou vier Ejifé, é um ótimo sinal.", imagem: "imagens/alafia.png" },
+            { nome: "Oyekú", texto: "Indica necessidade de mudança. Antes de jogar novamente, pergunte: 'Oyeku fó ire?'.", imagem: "imagens/oyeku.png" }
         ];
 
+        let indiceAtual = 0;
+
         function jogarObi() {
-            let sorteio = Math.floor(Math.random() * quedas.length);
-            let resultado = quedas[sorteio];
+            let resultado = quedas[indiceAtual];
 
             document.getElementById("resultadoImagem").src = resultado.imagem;
             document.getElementById("resultadoTexto").innerText = resultado.nome + ": " + resultado.texto;
+
+            indiceAtual++;
+            if (indiceAtual >= quedas.length) {
+                indiceAtual = 0;
+            }
         }
     </script>
 
