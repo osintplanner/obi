@@ -54,7 +54,7 @@
         .assinatura {
             font-family: 'Celtic Hand', cursive;
             font-size: 24px;
-            color: #00008B; /* Roxo escuro místico */
+            color: #00008B; /* Azul escuro */
             text-align: center;
             margin-top: 30px;
             padding: 10px;
@@ -64,64 +64,87 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Jogo de Obi</h1>
-
-        <button class="botao" onclick="mostrarEtapa(1)">1️⃣ Abertura e Limpeza do Obi</button>
-        <div id="etapa1" class="instrucao escondido">
-            <p><strong>Abertura do Obi:</strong></p>
-            <p>- Recite: <br>
-              "Obi lo ni bi ikú" <br>
-              "Obi lo ni bi arun" <br>
-              "Obi lo ni bi ejó" <br>
-              "Obi lo ni bi pòfo" <br>
-              "Obi lo ni bi oṣí"</p>
-            <p>- Separe os gomos do Obi e retire as afuas.</p>
-        </div>
-
-        <button class="botao" onclick="mostrarEtapa(2)">2️⃣ Rodando as Afuas e Invocações</button>
-        <div id="etapa2" class="instrucao escondido">
-            <p><strong>Rodando as Afuas:</strong></p>
-            <p>- Gire as afuas sobre o Obi e sobre sua cabeça, enquanto diz:</p>
-            <p>
-                "Ki Esu gbá" (3 vezes) <br>
-                "Koran gbá" <br>
-                "Kofo gbá" <br>
-                "Kejo gbá" <br>
-                "Kiku kuro lori rẹ́ (mi)" <br>
-                "Kiarun kuro lori rẹ́ (mi)"
-            </p>
-            <p>- Após rodar as afuas, jogue na rua ou num copo de água.</p>
-        </div>
-
-        <button class="botao" onclick="mostrarEtapa(3)">3️⃣ Apresentando o Obi ao Orisa</button>
-        <div id="etapa3" class="instrucao escondido">
-            <p><strong>Apresentação ao Orisa:</strong></p>
-            <p>- Junte os gomos na mão e diga: "Oriṣa _____ mo pe o" (três vezes).</p>
-            <p>- Outras frases importantes:</p>
-            <p>
-                "Obi koṣi ku" <br>
-                "Obi komarun" <br>
-                "Obi koṣi ejo" <br>
-                "Obi koṣi pofo" <br>
-                "Obi koṣi oṣi"
-            </p>
-        </div>
-
-        <button class="botao" onclick="mostrarEtapa(4)">4️⃣ Jogando o Obi</button>
-        <div id="etapa4" class="instrucao escondido">
-            <p><strong>Clique no botão abaixo para jogar o Obi.</strong></p>
-            <button class="botao" onclick="jogarObi()">🎲 Jogar Obi</button>
-            <img id="resultadoImagem" class="imagem" src="" alt="">
-            <p id="resultadoTexto"></p>
-        </div>
+    <div id="telaSenha" class="container">
+        <h1>🔒 Acesso Restrito</h1>
+        <p>Digite a senha para acessar o Jogo de Obi:</p>
+        <input type="password" id="senha" placeholder="Digite a senha">
+        <button class="botao" onclick="verificarSenha()">Entrar</button>
+        <p id="mensagemSenha" style="color: red;"></p>
     </div>
 
-    <div class="assinatura">
-        ✨
+    <div id="telaConteudo" class="escondido">
+        <div class="container">
+            <h1>Jogo de Obi</h1>
+
+            <button class="botao" onclick="mostrarEtapa(1)">1️⃣ Abertura e Limpeza do Obi</button>
+            <div id="etapa1" class="instrucao escondido">
+                <p><strong>Abertura do Obi:</strong></p>
+                <p>- Recite: <br>
+                  "Obi lo ni bi ikú" <br>
+                  "Obi lo ni bi arun" <br>
+                  "Obi lo ni bi ejó" <br>
+                  "Obi lo ni bi pòfo" <br>
+                  "Obi lo ni bi oṣí"</p>
+                <p>- Separe os gomos do Obi e retire as afuas.</p>
+            </div>
+
+            <button class="botao" onclick="mostrarEtapa(2)">2️⃣ Rodando as Afuas e Invocações</button>
+            <div id="etapa2" class="instrucao escondido">
+                <p><strong>Rodando as Afuas:</strong></p>
+                <p>- Gire as afuas sobre o Obi e sobre sua cabeça, enquanto diz:</p>
+                <p>
+                    "Ki Esu gbá" (3 vezes) <br>
+                    "Koran gbá" <br>
+                    "Kofo gbá" <br>
+                    "Kejo gbá" <br>
+                    "Kiku kuro lori rẹ́ (mi)" <br>
+                    "Kiarun kuro lori rẹ́ (mi)"
+                </p>
+                <p>- Após rodar as afuas, jogue na rua ou num copo de água.</p>
+            </div>
+
+            <button class="botao" onclick="mostrarEtapa(3)">3️⃣ Apresentando o Obi ao Orisa</button>
+            <div id="etapa3" class="instrucao escondido">
+                <p><strong>Apresentação ao Orisa:</strong></p>
+                <p>- Junte os gomos na mão e diga: "Oriṣa _____ mo pe o" (três vezes).</p>
+                <p>- Outras frases importantes:</p>
+                <p>
+                    "Obi koṣi ku" <br>
+                    "Obi komarun" <br>
+                    "Obi koṣi ejo" <br>
+                    "Obi koṣi pofo" <br>
+                    "Obi koṣi oṣi"
+                </p>
+            </div>
+
+            <button class="botao" onclick="mostrarEtapa(4)">4️⃣ Jogando o Obi</button>
+            <div id="etapa4" class="instrucao escondido">
+                <p><strong>Clique no botão abaixo para jogar o Obi.</strong></p>
+                <button class="botao" onclick="jogarObi()">🎲 Jogar Obi</button>
+                <img id="resultadoImagem" class="imagem" src="" alt="">
+                <p id="resultadoTexto"></p>
+            </div>
+        </div>
+
+        <div class="assinatura">
+            
+            Egbe Oduladun
+        </div>
     </div>
 
     <script>
+        const senhaCorreta = "obisecreto";  // 🔒 Defina a senha aqui
+
+        function verificarSenha() {
+            const senhaDigitada = document.getElementById("senha").value;
+            if (senhaDigitada === senhaCorreta) {
+                document.getElementById("telaSenha").classList.add("escondido");
+                document.getElementById("telaConteudo").classList.remove("escondido");
+            } else {
+                document.getElementById("mensagemSenha").innerText = "Senha incorreta. Tente novamente!";
+            }
+        }
+
         function mostrarEtapa(numero) {
             let elementos = document.querySelectorAll(".instrucao");
             elementos.forEach(el => el.classList.add("escondido"));
