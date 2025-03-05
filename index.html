@@ -93,32 +93,49 @@
                 <p><strong>Rodando as Afuas:</strong></p>
                 <p>- Gire as afuas sobre o Obi e sobre sua cabeça, enquanto diz:</p>
                 <p>
-                    "Ki Esu gbá" (3 vezes) <br>
-                    "Koran gbá" <br>
-                    "Kofo gbá" <br>
-                    "Kejo gbá" <br>
-                    "Kiku kuro lori rẹ́ (mi)" <br>
-                    "Kiarun kuro lori rẹ́ (mi)"
+                Ki Esu gbá (3 vezes) <br>
+				Koran gbá <br>
+				Kofo gbá <br>
+				Kejo gbá <br>
+				Kiku kuro lori rẹ́ (mi) <br>
+				Kiarun kuro lori rẹ́ (mi) <br>
+				Ki ejo kuro lori rẹ́ (mi) <br>
+				Ki ofo kuro lori rẹ́ (mi) <br>
+				Ki ota kuro ori rẹ́ (mi) <br>
+				Ki osi kuro lori rẹ́ (mi) <br>
+				Ki aje kuro lori rẹ́ (mi) <br>
+				Ki oso kuro lori rẹ́ (mi) <br>
+				Ki gbogbo ajogun kuro lori rẹ́ (mi)
                 </p>
                 <p>- Após rodar as afuas, jogue na rua ou num copo de água.</p>
             </div>
 
-            <button class="botao" onclick="mostrarEtapa(3)">3️⃣ Apresentando o Obi ao Orisa</button>
+            <button class="botao" onclick="mostrarEtapa(3)">3️⃣ Jogando Água para Invocações</button>
             <div id="etapa3" class="instrucao escondido">
-                <p><strong>Apresentação ao Orisa:</strong></p>
-                <p>- Junte os gomos na mão e diga: "Oriṣa _____ mo pe o" (três vezes).</p>
-                <p>- Outras frases importantes:</p>
-                <p>
-                    "Obi koṣi ku" <br>
-                    "Obi komarun" <br>
-                    "Obi koṣi ejo" <br>
-                    "Obi koṣi pofo" <br>
-                    "Obi koṣi oṣi"
-                </p>
+                <p><strong>Jogando água no chão para as invocações:</strong></p>
+                <p>- A cada invocação, jogue água no chão:</p>
+                <p>3x Ile ogere mo pe<p>
+				<p>Alapo ire<p>
+				<p>(Tocar a água que está no chão com a ponta dos dedos e levar à testa)<p>
+				<p>3x Ile tutu, Onan tutu<p>
+				<p>Baba egungun iba. Resposta: Ibaṣé<p>
+				<p>Iya mi Osoronga iba. Resposta: Ibaṣé<p>
+				<p>
+				<p><strong>Jogando água no chão e sobre o obi já aberto:<p><strong>
+				<p>Oriṣa _____ mo pe o (3 vezes)<p>
             </div>
 
-            <button class="botao" onclick="mostrarEtapa(4)">4️⃣ Jogando o Obi</button>
+            <button class="botao" onclick="mostrarEtapa(4)">4️⃣ Apresentando o Obi ao Orisa</button>
             <div id="etapa4" class="instrucao escondido">
+                <p><strong>Apresentação ao Orisa:</strong></p>
+                <p>- Jogue água no chão e sobre o obi já aberto:</p>
+                <p>Oriṣa _____ mo pe o (3 vezes)</p>
+                <p>- Junte os gomos e encoste na testa ou na nuca (se for para Esu):</p>
+                <p>Esu ko kuro lorí awo</p>
+            </div>
+
+            <button class="botao" onclick="mostrarEtapa(5)">5️⃣ Jogando o Obi</button>
+            <div id="etapa5" class="instrucao escondido">
                 <p><strong>Clique no botão abaixo para jogar o Obi.</strong></p>
                 <button class="botao" onclick="jogarObi()">🎲 Jogar Obi</button>
                 <img id="resultadoImagem" class="imagem" src="" alt="">
@@ -127,13 +144,12 @@
         </div>
 
         <div class="assinatura">
-           Égbé Odu Ladun
-        </p>Baba Oladeyi
+            Égbé Odu Ladun <br>Baba Oladeyi
         </div>
     </div>
 
     <script>
-        const senhaCorreta = "IreAje2025";  // 🔒 Defina a senha aqui
+        const senhaCorreta = "IreAje2025";  
 
         function verificarSenha() {
             const senhaDigitada = document.getElementById("senha").value;
