@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz do Jogo de Obi</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+            text-align: left;
+        }
+        .botao {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .botao:hover {
+            background-color: #45a049;
+        }
+        .pergunta {
+            display: none;
+        }
+        .ativa {
+            display: block;
+        }
+        .correcao {
+            display: none;
+        }
+        .correta {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Quiz do Jogo de Obi</h1>
+        <form id="quizForm">
+
+            <div class="pergunta ativa" id="q1">
+                <p><strong>1️⃣ O que significa a caída de Okanran?</strong></p>
+                <label><input type="radio" name="q1" value="A"> A) Morte iminente</label><br>
+                <label><input type="radio" name="q1" value="B"> B) Rever atitudes e evitar desentendimentos </label><br>
+                <label><input type="radio" name="q1" value="C"> C) Aceitação imediata de pedidos</label><br>
+                <label><input type="radio" name="q1" value="D"> D) Nenhum significado relevante</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(1)">PRÓXIMA</button>
+            </div>
+
+            <div class="pergunta" id="q2">
+                <p><strong>2️⃣ O que fazer ao jogar Oyeku?</strong></p>
+                <label><input type="radio" name="q2" value="A"> A) Jogar novamente e perguntar "Oyeku fó ire?" </label><br>
+                <label><input type="radio" name="q2" value="B"> B) Ignorar e continuar o ritual normalmente</label><br>
+                <label><input type="radio" name="q2" value="C"> C) Descartar o Obi e usar outro</label><br>
+                <label><input type="radio" name="q2" value="D"> D) Fazer um sacrifício imediatamente</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(2)">PRÓXIMA</button>
+            </div>
+
+            <div class="pergunta" id="q3">
+                <p><strong>3️⃣ Qual das seguintes caídas dispensa novas jogadas?</strong></p>
+                <label><input type="radio" name="q3" value="A"> A) Etawa</label><br>
+                <label><input type="radio" name="q3" value="B"> B) Okanran</label><br>
+                <label><input type="radio" name="q3" value="C"> C) Ejifé </label><br>
+                <label><input type="radio" name="q3" value="D"> D) Oyeku</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(3)">PRÓXIMA</button>
+            </div>
+
+            <div class="pergunta" id="q4">
+                <p><strong>4️⃣ Como se apresenta o Obi ao Orisa?</strong></p>
+                <label><input type="radio" name="q4" value="A"> A) Joga-se água sobre o Obi e repete-se "Oriṣa _____ mo pe o" </label><br>
+                <label><input type="radio" name="q4" value="B"> B) O Obi é queimado e as cinzas espalhadas</label><br>
+                <label><input type="radio" name="q4" value="C"> C) Mistura-se o Obi com mel antes de apresentar</label><br>
+                <label><input type="radio" name="q4" value="D"> D) O Obi deve ser enterrado após o ritual</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(4)">PRÓXIMA</button>
+            </div>
+
+            <div class="pergunta" id="q5">
+                <p><strong>5️⃣ Como organizar os gomos do Obi para um Orisa de energia feminina?</strong></p>
+                <label><input type="radio" name="q5" value="A"> A) Macho-Macho-Fêmea-Fêmea</label><br>
+                <label><input type="radio" name="q5" value="B"> B) Fêmea-Macho-Fêmea-Macho</label><br>
+                <label><input type="radio" name="q5" value="C"> C) Macho-Fêmea-Macho-Fêmea </label><br>
+                <label><input type="radio" name="q5" value="D"> D) Não há ordem específica</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(5)">PRÓXIMA</button>
+            </div>
+			
+			<div class="pergunta" id="q6">
+                <p><strong>6️⃣ Qual a função de rodar as Afuwas antes do jogo?</strong></p>
+                <label><input type="radio" name="q6" value="A"> A) Aumentar a sorte</label><br>
+                <label><input type="radio" name="q6" value="B"> B) Purificar e afastar energias negativas </label><br>
+                <label><input type="radio" name="q6" value="C"> C) Evocar os espíritos dos ancestrais</label><br>
+                <label><input type="radio" name="q6" value="D"> D) Confirmar se a pessoa pode jogar</label><br>
+                <button class="botao" type="button" onclick="proximaPergunta(6)">PRÓXIMA</button>
+            </div>
+			
+			<div class="pergunta" id="q7">
+				<p><strong>7️⃣ O que significa a caída de Aláfia?</strong></p>
+				<label><input type="radio" name="q7" value="A"> A) Harmonia geral e aceitação plena </label><br>
+				<label><input type="radio" name="q7" value="B"> B) Aviso de desentendimentos familiares</label><br>
+				<label><input type="radio" name="q7" value="C"> C) Indicação de mudanças urgentes</label><br>
+				<label><input type="radio" name="q7" value="D"> D) Predição de má sorte</label><br>
+				<button class="botao" type="button" onclick="proximaPergunta(7)">PRÓXIMA</button>
+			</div>
+
+			<div class="pergunta" id="q8">
+				<p><strong>8️⃣ Como arrumar o Obi na mão antes do jogo?</strong></p>
+				<label><input type="radio" name="q8" value="A"> A) A ordem não importa</label><br>
+				<label><input type="radio" name="q8" value="B"> B) Em espiral, girando 3 vezes</label><br>
+				<label><input type="radio" name="q8" value="C"> C) Na mão esquerda, com os gomos organizados </label><br>
+				<label><input type="radio" name="q8" value="D"> D) Na testa antes de lançar</label><br>
+				<button class="botao" type="button" onclick="proximaPergunta(8)">PRÓXIMA</button>
+			</div>
+
+			<div class="pergunta" id="q9">
+				<p><strong>9️⃣ O que deve ser feito após rodar as Afuwas?</strong></p>
+				<label><input type="radio" name="q9" value="A"> A) Jogá-las no mar</label><br>
+				<label><input type="radio" name="q9" value="B"> B) Jogá-las na rua ou num copo com água </label><br>
+				<label><input type="radio" name="q9" value="C"> C) Guardá-las para um próximo jogo</label><br>
+				<label><input type="radio" name="q9" value="D"> D) Enterrá-las na terra</label><br>
+				<button class="botao" type="button" onclick="proximaPergunta(9)">PRÓXIMA</button>
+			</div>
+
+			<div class="pergunta" id="q10">
+				<p><strong>🔟 Qual resposta correta ao ouvir "Baba egungun iba"?</strong></p>
+				<label><input type="radio" name="q10" value="A"> A) "Axé"</label><br>
+				<label><input type="radio" name="q10" value="B"> B) "Okê"</label><br>
+				<label><input type="radio" name="q10" value="C"> C) "Ibaṣé" </label><br>
+				<label><input type="radio" name="q10" value="D"> D) "Obi awo"</label><br>
+				<button class="botao" type="button" onclick="corrigirQuiz()">✅ CORRIGIR</button>
+			</div>
+
+        </form>
+
+        <!-- Tela de correção -->
+        <div id="telaCorrecao" class="correcao">
+            <h2>Resultado do Quiz</h2>
+            <p id="resultadoFinal"></p>
+            <h3>Respostas corretas:</h3>
+            <ul id="listaCorrecao"></ul>
+            <button class="botao" onclick="reiniciarQuiz()">🔄 Tentar novamente</button>
+        </div>
+
+    </div>
+
+    <script>
+        let perguntaAtual = 1;
+
+        function proximaPergunta(num) {
+            document.getElementById(`q${num}`).classList.remove("ativa");
+            document.getElementById(`q${num + 1}`).classList.add("ativa");
+        }
+
+        function corrigirQuiz() {
+            let respostasCorretas = {
+                q1: "B", q2: "A", q3: "C", q4: "A", q5: "C",
+                q6: "B", q7: "A", q8: "C", q9: "B", q10: "C"
+            };
+            let pontuacao = 0;
+            let listaErros = "";
+
+            for (let q in respostasCorretas) {
+                let resposta = document.querySelector(`input[name="${q}"]:checked`);
+                let correta = respostasCorretas[q];
+                
+                let textoPergunta = document.querySelector(`p[for="q${q}"]`)?.innerText || `Pergunta ${q.replace('q', '')}`;
+                let respostaCerta = `<span class="correta">${correta}</span>`;
+
+                if (resposta && resposta.value === correta) {
+                    pontuacao++;
+                } else {
+                    listaErros += `<li>${textoPergunta}: Resposta correta: <strong>${respostaCerta}</strong></li>`;
+                }
+            }
+
+            document.getElementById("resultadoFinal").innerText = `Você acertou ${pontuacao} de 10 perguntas!`;
+            document.getElementById("listaCorrecao").innerHTML = listaErros || "<li>Parabéns! Você acertou todas as perguntas.</li>";
+
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("telaCorrecao").style.display = "block";
+        }
+
+        function reiniciarQuiz() {
+            document.getElementById("quizForm").style.display = "block";
+            document.getElementById("telaCorrecao").style.display = "none";
+
+            document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+            document.querySelectorAll('.pergunta').forEach(pergunta => pergunta.classList.remove("ativa"));
+            document.getElementById("q1").classList.add("ativa");
+        }
+    </script>
+
+</body>
+</html>
