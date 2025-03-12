@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos - Jogo de Obi</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .botao {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .botao:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📹 Vídeos do Jogo de Obi</h1>
+
+        <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+        </video>
+
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+        </video>
+
+        <video controls>
+            <source src="video3.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição deste vídeo.
+        </video>
+
+        <button class="botao" onclick="voltarParaInstrucoes()">🔙 VOLTAR</button>
+    </div>
+
+    <script>
+        function voltarParaInstrucoes() {
+            window.location.href = 'index.html'; // Retorna à página principal
+        }
+    </script>
+
+</body>
+</html>
